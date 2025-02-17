@@ -46,10 +46,20 @@ class AppState(
     fun bottomNavigationTo(bottomNavBarItem: BottomNavBarItem) {
         when (bottomNavBarItem) {
             BottomNavBarItem.Home -> navigateToHome()
+            BottomNavBarItem.Top -> navigateToTop()
+            BottomNavBarItem.Settings -> navigateToSettings()
         }
     }
 
     private fun navigateToHome() {
         mainNavController.navigatePoppingUpToStartDestination(MainGraph.Home.route)
+    }
+
+    private fun navigateToTop() {
+        mainNavController.navigatePoppingUpToStartDestination(MainGraph.Top.route)
+    }
+
+    private fun navigateToSettings() {
+        mainNavController.navigatePoppingUpToStartDestination(MainGraph.Settings.route)
     }
 }

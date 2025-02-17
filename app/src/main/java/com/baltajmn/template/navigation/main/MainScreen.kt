@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import com.baltajmn.template.ui.AppState
 import com.baltajmn.template.core.design.components.BottomNavBar
 import com.baltajmn.template.core.design.components.isScrollingUp
+import com.baltajmn.template.ui.AppState
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

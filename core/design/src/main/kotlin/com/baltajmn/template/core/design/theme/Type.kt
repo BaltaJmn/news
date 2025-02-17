@@ -5,7 +5,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.baltajmn.template.core.design.R
+import com.baltajmn.news.core.design.R
 
 val LargeTitle: TextStyle
     get() = TextStyle(

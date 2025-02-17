@@ -6,6 +6,7 @@ import coil.ImageLoaderFactory
 import coil.disk.DiskCache
 import com.baltajmn.template.di.CoreModules
 import com.baltajmn.template.di.FeaturesModule
+import com.baltajmn.template.di.WorkerModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.workmanager.koin.workManagerFactory
@@ -22,6 +23,7 @@ class App : Application(), ImageLoaderFactory {
             modules(
                 CoreModules,
                 FeaturesModule,
+                WorkerModule
             )
         }
     }

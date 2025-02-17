@@ -54,7 +54,6 @@ repositories {
         url = uri("https://plugins.gradle.org/m2/")
     }
     gradlePluginPortal()
-
 }
 
 dependencies {

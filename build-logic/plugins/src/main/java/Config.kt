@@ -1,9 +1,11 @@
 object Config {
-    const val baseApplicationId = "com.baltajmn.template"
+    const val baseApplicationId = "com.baltajmn.news"
 
     object Feature {
         const val Splash = "$baseApplicationId.features.splash"
         const val Home = "$baseApplicationId.features.home"
+        const val Top = "$baseApplicationId.features.top"
+        const val Settings = "$baseApplicationId.features.settings"
     }
 
     object Core {

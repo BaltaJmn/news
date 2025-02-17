@@ -20,8 +20,8 @@ import com.baltajmn.template.core.navigation.GRAPH
 import com.baltajmn.template.core.navigation.GRAPH.PreMain
 import com.baltajmn.template.core.navigation.MainGraph
 import com.baltajmn.template.core.navigation.PreMainGraph.Splash
-import com.baltajmn.template.features.home.presentation.screen.HomeScreen
-import com.baltajmn.template.features.splash.presentation.screen.SplashScreen
+import com.baltajmn.features.home.presentation.screen.HomeScreen
+import com.baltajmn.features.splash.presentation.screen.SplashScreen
 
 fun NavGraphBuilder.preMainNavGraph(
     appState: AppState
@@ -72,6 +72,18 @@ fun MainNavGraph(
         ) {
             composable(
                 route = MainGraph.Home.route
+            ) {
+                HomeScreen(listState = homeListState)
+            }
+
+            composable(
+                route = MainGraph.Top.route
+            ) {
+                HomeScreen(listState = homeListState)
+            }
+
+            composable(
+                route = MainGraph.Settings.route
             ) {
                 HomeScreen(listState = homeListState)
             }

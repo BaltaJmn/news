@@ -14,5 +14,4 @@ abstract class AppDatabase : RoomDatabase() {
 }
 
 @Dao
-interface Dao {
-}
+interface Dao {}

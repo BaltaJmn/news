@@ -83,5 +83,6 @@ fun DependencyHandlerScope.api(group: Provider<ExternalModuleDependencyBundle>) 
     add("api", group)
 }
 
-fun DependencyHandlerScope.getBom(dependency: Provider<MinimalExternalModuleDependency>) = platform(dependency)
+fun DependencyHandlerScope.getBom(dependency: Provider<MinimalExternalModuleDependency>) =
+    platform(dependency)
 

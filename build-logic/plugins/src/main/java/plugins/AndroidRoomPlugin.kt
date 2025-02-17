@@ -2,7 +2,6 @@ package plugins
 
 import com.android.build.gradle.LibraryExtension
 import extensions.implementation
-import extensions.kapt
 import extensions.ksp
 import extensions.libs
 import org.gradle.api.Plugin

@@ -4,38 +4,53 @@ import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.White
+
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
+val Gray = Color(0xFFD7D2D0)
+val DarkGray = Color(0xFF525251)
+val Orange = Color(0xFFFD4C2A)
+val Black = Color(0xFF050504)
+
 private val ColorPalette = ColorScheme(
-    primary = Mint,
-    secondary = White,
-    tertiary = Mint,
-    error = Mint,
-    background = Color.Black,
-    onBackground = Color.White,
-    primaryContainer = Color.Black,
-    onPrimaryContainer = Color.White,
-    secondaryContainer = Color.Black,
-    onSecondaryContainer = Color.White,
-    tertiaryContainer = Color.Black,
-    onTertiaryContainer = Color.White,
-    errorContainer = Color.Black,
-    onErrorContainer = Color.White,
-    surface = Color.White,
-    onSurface = Color.White,
-    surfaceVariant = Color.Black,
-    onSurfaceVariant = Color.White,
-    outline = Color.Black,
-    inverseOnSurface = Color.White,
-    inverseSurface = Color.Black,
-    inversePrimary = Mint,
-    onError = Mint,
-    onPrimary = Color.Black,
-    onSecondary = Color.Black,
-    onTertiary = Color.Black,
-    outlineVariant = Color.Black,
-    scrim = Color.Black,
-    surfaceTint = Mint
+    primary = Orange,
+    onPrimary = White,
+    primaryContainer = DarkGray,
+    onPrimaryContainer = White,
+
+    secondary = Gray,
+    onSecondary = Black,
+    secondaryContainer = DarkGray,
+    onSecondaryContainer = White,
+
+    tertiary = White,
+    onTertiary = Black,
+    tertiaryContainer = Gray,
+    onTertiaryContainer = Black,
+
+    error = Orange,
+    onError = White,
+    errorContainer = DarkGray,
+    onErrorContainer = White,
+
+    background = Black,
+    onBackground = White,
+
+    surface = DarkGray,
+    onSurface = White,
+    surfaceVariant = Gray,
+    onSurfaceVariant = Black,
+
+    outline = Gray,
+    outlineVariant = DarkGray,
+
+    inverseSurface = White,
+    inverseOnSurface = Black,
+    inversePrimary = Orange,
+
+    scrim = Black,
+    surfaceTint = Orange
 )
 
 

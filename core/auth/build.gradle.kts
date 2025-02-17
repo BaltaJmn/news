@@ -7,6 +7,10 @@ plugins {
 android {
     namespace = Config.Core.Auth
 
+    packagingOptions {
+        exclude("META-INF/*.*")
+    }
+
     defaultConfig {
         buildConfigField("String", "PROJECT_ID", project.property("PROJECT_ID").toString())
         buildConfigField("String", "APP_ID", project.property("APP_ID").toString())

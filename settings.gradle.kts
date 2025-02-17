@@ -1,4 +1,4 @@
-rootProject.name = "Template"
+rootProject.name = "News"
 
 pluginManagement {
     includeBuild("build-logic")
@@ -31,5 +31,7 @@ include(
 //Features
 include(
     ":features:splash",
-    ":features:home"
+    ":features:home",
+    ":features:top",
+    ":features:settings"
 )

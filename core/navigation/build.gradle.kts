@@ -4,6 +4,11 @@ plugins {
 
 android {
     namespace = Config.Core.Navigation
+
+    packagingOptions {
+        exclude("META-INF/*.*")
+    }
+
 }
 
 dependencies {

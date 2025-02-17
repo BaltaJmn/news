@@ -2,12 +2,14 @@ package com.baltajmn.template.di
 
 import com.baltajmn.auth.di.AuthModule
 import com.baltajmn.data.di.DataModule
+import com.baltajmn.data.worker.SyncWorker
 import com.baltajmn.network.di.NetworkModule
 import com.baltajmn.template.core.common.dispatchers.DispatchersModule
 import com.baltajmn.template.core.persistence.di.PersistenceModule
 import com.baltajmn.template.database.di.DatabaseModule
-import com.baltajmn.template.features.home.di.HomeModule
-import com.baltajmn.template.features.splash.di.SplashModule
+import com.baltajmn.features.home.di.HomeModule
+import com.baltajmn.features.splash.di.SplashModule
+import org.koin.androidx.workmanager.dsl.workerOf
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
@@ -33,4 +35,9 @@ val FeaturesModule: Module
                 HomeModule,
             )
         )
+    }
+
+val WorkerModule: Module
+    get() = module {
+        workerOf(::SyncWorker)
     }

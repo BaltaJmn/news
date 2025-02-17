@@ -39,6 +39,8 @@ firebaseAuthUi = "8.0.2"
 firebaseGoogleServices = "4.4.0"
 firebaseGoogleServicesAuth = "20.7.0"
 firebase-auth = "22.3.0"
+kotlinGradlePlugin = "1.9.0"
+lifecycleRuntimeKtx = "2.8.7"
 
 [libraries]
 
@@ -109,6 +111,9 @@ firebase-auth-ui = { group = "com.firebaseui", name = "firebase-ui-auth", versio
 firebase-common = { group = "com.google.firebase", name = "firebase-common-ktx", version.ref = "firebaseCommonKtx" }
 firebase-google-services = { group = "com.google.gms", name = "google-services", version.ref = "firebaseGoogleServices" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebase-auth" }
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 
 [plugins]
 

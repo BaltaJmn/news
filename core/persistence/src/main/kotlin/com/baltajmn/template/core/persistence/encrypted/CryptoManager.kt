@@ -18,7 +18,7 @@ class CryptoManager {
         }
 
     private val decryptCypher
-        get() =  Cipher.getInstance(TRANSFORMATION).apply {
+        get() = Cipher.getInstance(TRANSFORMATION).apply {
             init(Cipher.DECRYPT_MODE, skeySpec, ivSpec)
         }
 

@@ -4,6 +4,10 @@ plugins {
 
 android {
     namespace = Config.Core.Persistence
+
+    packagingOptions {
+        exclude("META-INF/*.*")
+    }
 }
 
 dependencies {

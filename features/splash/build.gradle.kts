@@ -5,4 +5,12 @@ plugins {
 
 android {
     namespace = Config.Feature.Splash
+
+    packagingOptions {
+        exclude("META-INF/*.*")
+    }
+}
+
+dependencies {
+    implementation(projects.core.data)
 }

@@ -19,9 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.baltajmn.template.core.design.theme.SmallTitle
 import com.baltajmn.template.core.design.theme.AppTheme
-import com.baltajmn.template.core.design.theme.White
+import com.baltajmn.template.core.design.theme.SmallTitle
 
 @Composable
 fun ButtonDefault(
@@ -32,10 +31,7 @@ fun ButtonDefault(
 ) {
     Button(
         modifier = modifier,
-        colors = ButtonDefaults.buttonColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-            contentColor = White
-        ),
+        colors = ButtonDefaults.buttonColors(),
         shape = RoundedCornerShape(33),
         onClick = onClick,
         contentPadding = PaddingValues(10.dp)
@@ -54,7 +50,7 @@ fun ButtonDefault(
             Icon(
                 modifier = Modifier.wrapContentSize(),
                 imageVector = icon,
-                tint = MaterialTheme.colorScheme.primary,
+                tint = MaterialTheme.colorScheme.secondary,
                 contentDescription = null,
             )
         }

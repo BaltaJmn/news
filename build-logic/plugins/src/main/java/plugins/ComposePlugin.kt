@@ -33,7 +33,7 @@ fun Project.configureCompose(commonExtension: CommonExtension<*, *, *, *, *>) {
 
     dependencies {
         implementation(project(":core:navigation"))
-        if(project.name != "design") {
+        if (project.name != "design") {
             implementation(project(":core:design"))
         }
         implementationBom(platform(libs.androidx.compose.bom))

@@ -1,9 +1,9 @@
 package com.baltajmn.template.core.persistence.sharedpreferences
 
 import android.content.Context
+import com.baltajmn.template.core.persistence.encrypted.CryptoManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.baltajmn.template.core.persistence.encrypted.CryptoManager
 import java.lang.reflect.Type
 
 class SharedPreferencesProvider(
@@ -22,7 +22,8 @@ class SharedPreferencesProvider(
 
     override fun getString(key: SharedPreferencesItem, decrypt: Boolean): String? {
         if (decrypt) {
-            val encryptedValue = sharedPreferences.getString(key.name.lowercase(), null) ?: return null
+            val encryptedValue =
+                sharedPreferences.getString(key.name.lowercase(), null) ?: return null
             return cryptoManager.decrypt(encryptedValue)
         }
         return sharedPreferences.getString(key.name.lowercase(), null)

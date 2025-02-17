@@ -5,4 +5,9 @@ plugins {
 
 android {
     namespace = Config.Core.Database
+
+    packagingOptions {
+        exclude("META-INF/*.*")
+    }
+
 }

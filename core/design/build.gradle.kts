@@ -5,4 +5,9 @@ plugins {
 
 android {
     namespace = Config.Core.Design
+
+    packagingOptions {
+        exclude("META-INF/*.*")
+    }
+
 }
