@@ -5,7 +5,7 @@ compileSdk = "34"
 targetSdk = "34"
 minSdk = "26"
 kotlin = "1.9.20"
-gradle = "8.1.4"
+gradle = "8.8.0"
 ktlint = "11.0.0"
 ktor = "2.2.2"
 logginInterceptor = "4.12.0"
@@ -45,7 +45,7 @@ lifecycleRuntimeKtx = "2.8.7"
 [libraries]
 
 androidx-compose-activity = "androidx.activity:activity-compose:1.8.1"
-androidx-compose-navigation = "androidx.navigation:navigation-compose:2.7.5"
+androidx-compose-navigation = "androidx.navigation:navigation-compose:2.8.7"
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
@@ -111,7 +111,6 @@ firebase-auth-ui = { group = "com.firebaseui", name = "firebase-ui-auth", versio
 firebase-common = { group = "com.google.firebase", name = "firebase-common-ktx", version.ref = "firebaseCommonKtx" }
 firebase-google-services = { group = "com.google.gms", name = "google-services", version.ref = "firebaseGoogleServices" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebase-auth" }
-kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 

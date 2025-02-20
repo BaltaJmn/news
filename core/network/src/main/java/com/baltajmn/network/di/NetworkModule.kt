@@ -5,6 +5,7 @@ import com.baltajmn.network.datasource.DefaultNewsDatasource
 import com.baltajmn.network.datasource.NewsDatasource
 import com.baltajmn.network.interceptor.NetworkInterceptor
 import com.baltajmn.network.interceptor.ThreadInterceptor
+import com.baltajmn.network.service.NewsService
 import okhttp3.Interceptor
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.singleOf
@@ -12,11 +13,12 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
-private const val BASE_URL: String = "https://newsapi.org/v2/"
+private const val BASE_URL: String = "https://newsapi.org/"
 
 val NetworkModule = module {
 
     factoryOf(::NetworkInterceptor) bind Interceptor::class
+    factoryOf(::ThreadInterceptor) bind Interceptor::class
 
     singleOf(::DefaultNewsDatasource) bind NewsDatasource::class
 
@@ -29,5 +31,7 @@ val NetworkModule = module {
             ),
         )
     }
+
+    single { NewsService(get(named("UserClient"))) }
 
 }

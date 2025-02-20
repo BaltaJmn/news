@@ -1,13 +1,14 @@
 package com.baltajmn.network.service
 
 
+import com.baltajmn.network.model.ResultApi
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 
 class NewsService(
-    private val httpClient: HttpClient,
+    private val httpClient: HttpClient
 ) {
 
     suspend fun getEverything(
@@ -19,8 +20,8 @@ class NewsService(
         to: String? = null,
         language: String? = null,
         sortBy: String? = null,
-    ): String {
-        return httpClient.get("/everything") {
+    ): ResultApi {
+        return httpClient.get("/v2/everything") {
             q?.let { parameter("q", it) }
             searchIn?.let { parameter("searchIn", it) }
             sources?.let { parameter("sources", it) }
@@ -36,8 +37,8 @@ class NewsService(
         q: String? = null,
         country: String? = null,
         category: String? = null
-    ): String {
-        return httpClient.get("/everything") {
+    ): ResultApi {
+        return httpClient.get("/v2/top-headlines") {
             q?.let { parameter("q", it) }
             country?.let { parameter("country", it) }
             category?.let { parameter("category", it) }
@@ -47,11 +48,10 @@ class NewsService(
     suspend fun getTopSources(
         q: String? = null,
         sources: String? = null
-    ): String {
-        return httpClient.get("/everything") {
+    ): ResultApi {
+        return httpClient.get("/v2/top-headlines") {
             q?.let { parameter("q", it) }
             sources?.let { parameter("sources", it) }
         }.body()
     }
-
 }

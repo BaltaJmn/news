@@ -1,5 +1,6 @@
 package com.baltajmn.features.home.di
 
+
 import com.baltajmn.features.home.domain.GetNews
 import com.baltajmn.features.home.domain.GetNewsUseCase
 import com.baltajmn.features.home.presentation.screen.HomeViewModel

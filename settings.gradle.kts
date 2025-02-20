@@ -31,7 +31,9 @@ include(
 //Features
 include(
     ":features:splash",
+    ":features:preferences",
     ":features:home",
+    ":features:article",
     ":features:top",
     ":features:settings"
 )

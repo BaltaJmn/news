@@ -18,6 +18,7 @@ class AndroidLibraryPlugin : Plugin<Project> {
             apply("com.android.library")
             apply("kotlin-android")
             apply("kotlinx-serialization")
+            apply("kotlin-parcelize")
         }
 
         extensions.configure<LibraryExtension> {

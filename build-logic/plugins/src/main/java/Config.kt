@@ -3,7 +3,9 @@ object Config {
 
     object Feature {
         const val Splash = "$baseApplicationId.features.splash"
+        const val Preferences = "$baseApplicationId.features.preferences"
         const val Home = "$baseApplicationId.features.home"
+        const val Article = "$baseApplicationId.features.article"
         const val Top = "$baseApplicationId.features.top"
         const val Settings = "$baseApplicationId.features.settings"
     }

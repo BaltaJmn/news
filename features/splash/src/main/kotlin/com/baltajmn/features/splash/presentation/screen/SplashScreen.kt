@@ -10,7 +10,8 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun SplashScreen(
     viewModel: SplashViewModel = koinViewModel(),
-    navigateToMainGraph: () -> Unit
+    navigateToMainGraph: () -> Unit,
+    navigateToPreferences: () -> Unit
 ) {
     collectEvents {
         viewModel.event.collectLatest {

@@ -1,6 +1,7 @@
 package com.baltajmn.template.ui
 
 import android.content.Context
+import android.net.Uri
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
@@ -8,11 +9,14 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.baltajmn.template.core.common.model.Article
 import com.baltajmn.template.core.design.components.BottomNavBarItem
 import com.baltajmn.template.core.navigation.GRAPH
 import com.baltajmn.template.core.navigation.MainGraph
+import com.baltajmn.template.core.navigation.PreMainGraph
 import com.baltajmn.template.core.navigation.extensions.navigateAndPop
 import com.baltajmn.template.core.navigation.extensions.navigatePoppingUpToStartDestination
+import com.google.gson.Gson
 
 @Composable
 fun rememberAppState(
@@ -34,6 +38,10 @@ class AppState(
         @Composable get() = mainNavController.currentBackStackEntryAsState().value?.destination?.route
             ?: ""
 
+    fun navigateToPreferences() {
+        preMainNavController.navigatePoppingUpToStartDestination(PreMainGraph.Preferences.route)
+    }
+
     fun navigateToMainGraph() {
         preMainNavController.popBackStack()
         preMainNavController.navigateAndPop(GRAPH.Main)
@@ -49,6 +57,14 @@ class AppState(
             BottomNavBarItem.Top -> navigateToTop()
             BottomNavBarItem.Settings -> navigateToSettings()
         }
+    }
+
+    fun navigateToArticle(article: Article) {
+        mainNavController.navigate(
+            MainGraph.Article.route.replace(
+                "{articleJson}", Uri.encode(Gson().toJson(article))
+            )
+        )
     }
 
     private fun navigateToHome() {

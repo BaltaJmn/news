@@ -7,11 +7,13 @@ object GRAPH {
 }
 
 enum class PreMainGraph(val route: String) {
-    Splash("splash")
+    Splash("splash"),
+    Preferences("preferences")
 }
 
 enum class MainGraph(val route: String) {
     Home("home"),
+    Article("article"),
     Top("top"),
     Settings("settings")
 }

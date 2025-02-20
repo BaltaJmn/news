@@ -1,6 +1,7 @@
 package com.baltajmn.features.home.domain
 
 import com.baltajmn.data.repository.NewsRepository
+import com.baltajmn.template.core.common.model.Article
 
 interface GetNewsUseCase {
 
@@ -11,7 +12,7 @@ interface GetNewsUseCase {
         domains: String? = null,
         from: String? = null,
         to: String? = null
-    ): String
+    ): List<Article>
 
 }
 
@@ -26,7 +27,7 @@ class GetNews(
         domains: String?,
         from: String?,
         to: String?
-    ): String {
+    ): List<Article> {
         return newsRepository.getNews(q, searchIn, sources, domains, from, to)
     }
 

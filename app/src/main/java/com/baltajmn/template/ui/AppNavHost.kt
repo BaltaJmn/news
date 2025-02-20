@@ -8,20 +8,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.baltajmn.features.home.presentation.screen.HomeScreen
+import com.baltajmn.features.preferences.presentation.screen.PreferencesScreen
+import com.baltajmn.features.splash.presentation.screen.SplashScreen
 import com.baltajmn.template.core.design.components.BottomNavBar
 import com.baltajmn.template.core.design.components.BottomNavBarItem
 import com.baltajmn.template.core.design.components.isScrollingUp
 import com.baltajmn.template.core.navigation.GRAPH
 import com.baltajmn.template.core.navigation.GRAPH.PreMain
 import com.baltajmn.template.core.navigation.MainGraph
+import com.baltajmn.template.core.navigation.PreMainGraph.Preferences
 import com.baltajmn.template.core.navigation.PreMainGraph.Splash
-import com.baltajmn.features.home.presentation.screen.HomeScreen
-import com.baltajmn.features.splash.presentation.screen.SplashScreen
 
 fun NavGraphBuilder.preMainNavGraph(
     appState: AppState
@@ -34,6 +35,15 @@ fun NavGraphBuilder.preMainNavGraph(
             route = Splash.route
         ) {
             SplashScreen(
+                navigateToMainGraph = { appState.navigateToMainGraph() },
+                navigateToPreferences = { appState.navigateToPreferences() }
+            )
+        }
+
+        composable(
+            route = Preferences.route
+        ) {
+            PreferencesScreen(
                 navigateToMainGraph = { appState.navigateToMainGraph() }
             )
         }
@@ -45,13 +55,16 @@ fun NavGraphBuilder.preMainNavGraph(
 fun MainNavGraph(
     appState: AppState
 ) {
-    val configuration = LocalConfiguration.current
-
     var screenRoute by remember { mutableStateOf(BottomNavBarItem.Home) }
     val currentRoute = appState.currentRoute
 
     val homeListState = rememberLazyListState()
-    val shouldShow = homeListState.isScrollingUp()
+    val settingsListState = rememberLazyListState()
+
+    val isHomeScrolling = homeListState.isScrollingUp()
+    val isSettingsScrolling = settingsListState.isScrollingUp()
+
+    val shouldShow = isHomeScrolling && isSettingsScrolling
 
     Scaffold(
         bottomBar = {
@@ -77,15 +90,9 @@ fun MainNavGraph(
             }
 
             composable(
-                route = MainGraph.Top.route
-            ) {
-                HomeScreen(listState = homeListState)
-            }
-
-            composable(
                 route = MainGraph.Settings.route
             ) {
-                HomeScreen(listState = homeListState)
+                //HomeScreen(listState = homeListState)
             }
         }
     }

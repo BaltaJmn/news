@@ -24,7 +24,12 @@ dependencies {
     implementation(projects.core.persistence)
 
     implementation(projects.features.splash)
+    implementation(projects.features.preferences)
     implementation(projects.features.home)
+    implementation(projects.features.article)
+    implementation(projects.features.top)
+    implementation(projects.features.settings)
 
     implementation(libs.androidx.workmanager)
+    implementation(libs.gson)
 }
